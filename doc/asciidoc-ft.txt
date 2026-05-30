@@ -1,0 +1,67 @@
+*asciidoc-ft.txt*: Asciidoc Filetype Support	
+
+	NEOVIM ASCIIDOC FILETYPE PLUGIN	 *asciidoc-ft*
+
+	NeoVim ft asciidoc plugin with improved features
+	
+------------------------------------------------------------------------------
+
+	TABLE OF CONTENT			
+
+	1. Overview				|asciidoc-ft-overview|
+	2. Mapping				|asciidoc-ft-mapping|
+	3. Configuration			|asciidoc-ft-config|
+	4. Miscellaneous			|asciidoc-ft-miscellaneous|
+	5. License				|asciidoc-ft-license|
+
+
+------------------------------------------------------------------------------
+Overview					*asciidoc-ft-overview*
+
+	Support 
+	- gf (goto file),gp (preview), gx (open link)
+	- Efficient folding support
+
+
+------------------------------------------------------------------------------
+Mapping						*asciidoc-ft-mapping*
+	MODUS	MAPPING	DESCRIPTION
+	n	gf	open file under cursor. Ignore link,include and xref macro 
+	n	gp	preview. Open asciidoc viewer. Use a:asciidoc_browser
+			to change default browser
+	n	gx	follow link. Open browser
+	n	<LocalLeader>z	Redraw folding
+
+------------------------------------------------------------------------------
+Configuration 					*asciidoc-ft-config*
+
+`vim.g.asciidoc_browser`				*asciidoc_browser*
+	Type: |String|
+	Standard: empty
+	To avoid default browser for preview use this:
+	vim.g.asciidoc_browser = 'firefox' 
+	or
+	vim.g.asciidoc_browser = 'goggle-chrome-stable'
+
+`vim.g.asciidoc_folding`				*asciidoc_folding*
+	Type: |Int|
+	Standard: 1
+	Set it to 0, to disable folding
+
+------------------------------------------------------------------------------
+Miscellaneous					*asciidoc-ft-miscellaneous*
+
+If you use asciidoctor.js to view adoc files then it's recommended to set 
+:relfileprefix: ../ 
+This ensures that references to external Asciidoc documents 
+can be addressed correctly.
+
+
+------------------------------------------------------------------------------
+Licence						*asciidoc-ft-license*
+
+AUTOR: Andreas Rudolf <ardev@gmx.de>                           
+LIZENZ: Apache License 2.0
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:
